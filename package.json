@@ -1,0 +1,35 @@
+{
+  "name": "policecz-vehicles-client",
+  "version": "1.0.0",
+  "description": "API/client to the official Czech police database of stolen vehicles",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/eslint/bin/eslint.js . --fix",
+    "pretest": "npm run lint",
+    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 15000 spec",
+    "coverage": "istanbul cover -x **/spec/** node_modules/.bin/_mocha -- -R spec spec",
+    "send-coverage": "./node_modules/.bin/codecov",
+    "travis-pipeline": "npm run coverage && npm run send-coverage"
+  },
+  "keywords": [
+    "API",
+    "stolen",
+    "vehicles",
+    "Policie",
+    "ČR"
+  ],
+  "author": "Tomas Dvorak",
+  "license": "MIT",
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "eslint": "^2.2.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "nock": "^7.2.2"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "q": "^1.4.1",
+    "request-promise": "^2.0.1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "druh": "class",
+  "vyrobce": "manufacturer",
+  "typ": "type",
+  "barva": "color",
+  "spz": "regno",
+  "mpz": "rpw",
+  "motor": "engine",
+  "rokvyroby": "productionyear",
+  "nahlaseno": "stolendate"
+}
