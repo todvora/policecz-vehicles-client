@@ -9,17 +9,17 @@ describe(__filename, function () {
 
     nock.disableNetConnect();
 
-    nock('https://aplikace.policie.cz')
+    nock('http://aplikace.policie.cz')
       .filteringPath(path => path.indexOf('/patrani-vozidla/default.aspx') === 0 ? '/list' : path)
       .get('/list')
      .replyWithFile(200, path.join(__dirname, 'resources', 'list.html'));
 
-    nock('https://aplikace.policie.cz')
+    nock('http://aplikace.policie.cz')
        .filteringPath(path => path.indexOf('NONSENSE') > -1 ? '/list' : path)
        .get('/list')
       .replyWithFile(200, path.join(__dirname, 'resources', 'no-results.html'));
 
-    nock('https://aplikace.policie.cz')
+    nock('http://aplikace.policie.cz')
        .filteringPath(path => path.indexOf('/patrani-vozidla/default.aspx') === 0 ? '/list' : path)
        .get('/patrani-vozidla/Detail.aspx?id=987654321')
       .replyWithFile(200, path.join(__dirname, 'resources', 'detail.html'));
@@ -39,7 +39,7 @@ describe(__filename, function () {
           assert.equal(results.results[0].engine, 'ABC123DEF');
           assert.equal(results.results[0].productionyear, '2008');
           assert.equal(results.results[0].stolendate, '1.3.2012');
-          assert.equal(results.results[0].url, 'https://aplikace.policie.cz/patrani-vozidla/Detail.aspx?id=987654321');
+          assert.equal(results.results[0].url, 'http://aplikace.policie.cz/patrani-vozidla/Detail.aspx?id=987654321');
         });
   });
 
