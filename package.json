@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "cheerio": "^0.20.0",
-    "q": "^1.4.1",
     "request-promise": "^2.0.1"
   }
 }
