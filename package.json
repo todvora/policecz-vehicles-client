@@ -20,6 +20,14 @@
   ],
   "author": "Tomas Dvorak",
   "license": "MIT",
+  "homepage": "https://github.com/todvora/policecz-vehicles-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/todvora/policecz-vehicles-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/todvora/policecz-vehicles-client/issues"
+  },
   "devDependencies": {
     "codecov": "^1.0.1",
     "eslint": "^2.2.0",
